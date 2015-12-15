@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "description": "Lista de pokemons",
+  "main": "index.js",
+  "authors": [
+    "Alex Valdes"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
