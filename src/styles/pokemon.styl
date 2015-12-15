@@ -1,0 +1,31 @@
+.Pokemons
+	padding-top 4em
+	.Pokemon
+		display flex
+		background $rojoSuave
+		&:nth-child(odd)
+			background $gris
+		&-img
+			width 10em
+			height 10em
+			background black
+		&-info
+			display flex
+			position relative
+			align-items center
+			justify-content center
+			width 100%
+			padding-bottom 2em
+			&-name
+				padding 0 1em
+			button
+				position absolute
+				bottom 1em
+				right 1em
+				border 0
+				padding .5em 1em
+				background transparent
+				border 2px solid $amarillo
+				&:hover
+					color white
+					background $amarillo
