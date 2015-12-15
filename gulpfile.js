@@ -46,7 +46,7 @@ var config = {
 		watch: './src/*.jade'
 	},
 	scripts:{
-		main: './src/scripts/*.js',
+		main: './src/scripts/index.js',
 		output: './dist/js',
 		watch: './src/scripts/*.js'
 	},
@@ -96,11 +96,16 @@ gulp.task('stylusTocss', function(){
 
 
 gulp.task('js', function(){
-	gulp
-		.src(config.scripts.main)
-		//.pipe(uglify())
-		.pipe(gulp.dest(config.scripts.output))
-		.pipe(livereload());
+	return browserify({
+		entries: config.scripts.main,
+		transform: debowerify
+	})
+	.bundle()
+	.pipe(source('app.js'))
+	.pipe(buffer())
+	.pipe(uglify())
+	.pipe(gulp.dest(config.scripts.output))
+	.pipe(livereload());
 });
 
 // Observa los cambios tanto en HTML, CSS y JS
